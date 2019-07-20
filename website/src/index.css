@@ -1,0 +1,278 @@
+body {
+    margin: 0;
+    background-color: black;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html,
+#root {
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    background-color: white;
+}
+
+#root {
+    position: relative;
+}
+
+.page{
+    position: absolute;
+    top: 15vh;
+    left: 0;
+    right: 0;
+}
+
+.right {
+    float: right;
+}
+
+.jumbo {
+    height: 85vh;
+    width: 100%;
+    top:0;
+    left:0;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 0;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.header-nav {
+    font-size: 30px;
+}
+
+.header-nav .nav-item {
+    min-height: 10vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.header-nav .nav-item {
+    margin-left: 5px;
+}
+
+.header-nav .nav-item a {
+    color: black;
+}
+
+.header-nav .nav-item.active {
+    background-color: rgba(0,0,0,.4);
+}
+.header-nav .nav-item.active:hover {
+    background-color: rgba(0,0,0,.4);
+}
+
+.header-nav .nav-item:hover {
+    background-color: rgba(0,0,0,.2);
+}
+
+.header-nav .nav-item a:hover {
+    text-decoration: none;
+}
+
+.darken {
+    height:100%;
+    width:100%;
+    background-color: black;
+
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+
+    opacity: 0;
+    visibility: hidden; 
+}
+
+.darken.show {
+    opacity: 0.8;
+    visibility: visible; 
+  }
+
+.darken * {
+    filter: none;
+}
+
+.center-container {
+    position: absolute;
+    top: 15vh;
+    left: 0;
+    right: 0;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.jumbo-center {
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    width: 100%;
+
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+
+.jumbo-center h1 {
+    font-size: 500%;
+    font-weight: bold;
+    color: white;
+}
+
+.jumbo-center.show {
+    opacity: 1;
+    visibility: visible; 
+}
+
+.info-section {
+    font-family: 'Lora', serif;
+    background-color: white;
+    min-height: 300px;
+    text-align: center;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.info-section h1 {
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.info-section h4 {
+    margin-bottom: 0;
+}
+
+.page{
+    background-color: white;
+    text-align: center;
+    font-family: 'Lora', serif;
+}
+
+.page h1, .page h2 {
+    font-size: 300%
+}
+
+
+.about-section {
+    background-color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.about-section h5 {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.robot-section {
+    background-color: white;
+    min-height: 300px;
+    text-align: center;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+/* Sponsors */
+.circle-container{
+    margin: auto;
+    list-style: none;
+    width:700px;
+    height:700px;
+}
+
+.sponsor {
+    position: absolute;
+    width: 100px;
+}
+
+.sponsors-banner{
+    padding-top: 20px;
+    margin-bottom: 40px;
+}
+
+.sponsors-banner h2{
+    position: absolute;
+    top: 460px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 50px;
+}
+
+.sponsors-content {
+    font-family: 'Lora', serif;
+    text-align: center
+}
+
+.sponsors-bit {
+    text-align: left;
+    margin-top: 20px;
+    padding-left: 25%;
+    padding-right: 25%
+}
+
+.sponsors-bit h2 {
+    text-align: right;
+    border-bottom: 3px solid black;
+}
+
+/* Animations */
+.fade-enter {
+    opacity: 0;
+  }
+  .fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+  .fade-exit {
+    opacity: 1;
+  }
+  .fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+
+  
+  .left-enter {
+    transform: translate(100%);
+  }
+  .left-enter.left-enter-active {
+    transform: translate(0%);
+    transition: transform 1000ms ease-in-out;
+  }
+  .left-leave {
+    transform: translate(0%);
+  }
+  .left-leave.left-leave-active {
+    transform: translate(-100%);
+    transition: transform 1000ms ease-in-out;
+  }
+  
