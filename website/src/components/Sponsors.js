@@ -78,10 +78,12 @@ class Sponsors extends React.Component {
 
 
     updateCircle() {
-        this.setState({
-            header1Height: this.header1.current.offsetTop - 600,
-            header2Height: this.header2.current.offsetTop - 700
-        })
+        if (this.header1.current && this.header2.current) {
+            this.setState({
+                header1Height: this.header1.current.offsetTop - 600,
+                header2Height: this.header2.current.offsetTop - 700
+            })
+        }
         if (this.containerRef.current) {
             const numItems = 13
             let start = 4.8
@@ -159,14 +161,33 @@ class Sponsors extends React.Component {
                         config={config.slow}>
                         {props =>
                             <div className="sponsors-bit">
-                                <h2 ref={this.header2} style={{ ...props }}>Ideals</h2>
+                                <h2 ref={this.header2} style={{ ...props, ...{ marginBottom: "60px" } }}>Ideals</h2>
                                 <h4>This project is an investment in the future of engineering and robotics. Students on the team learn practical engineering skills that make them better prepared to join the work force. They also get to study and research cutting edge methods in robotics.</h4>
                             </div>
                         }
                     </Spring>
                     <h1 style={{ marginTop: "40px" }}>How is the money used?</h1>
-                    <div className="sponsors-bit">
+                    <div className="sponsors-bit" style={{ marginBottom: "40px" }}>
                         <h4>We use donations from sponsors to purchase parts for the robot (motors, computers, metal) and for travel costs to the competition at Kennedy Space Center, Florida.</h4>
+                    </div>
+
+                    <h1>How to Sponsor</h1>
+                    <div className="sponsors-bit">
+                        <h4>Donations may be made online:</h4>
+                        <ol style={{ marginBottom: "40px" }}>
+                            <li><h4>Go to the <a href="https://umarket.utah.edu/ugive/level3.php?catid=22">College of Mines and Earth Sciences Development Site</a></h4></li>
+                            <li><h4>Select “Department of Mining and Engineering General Development Fund”</h4></li>
+                            <li><h4>Under “Special Instructions”, add a note specifically requesting that the funds be used for “The Utah Robotic Mining Project”</h4></li>
+                            <li><h4>Continue with payment instructions</h4></li>
+                        </ol>
+                        <h4>Donations may also be sent to:</h4>
+                        <h4 style={{ marginBottom: "40px" }}><em>The Utah Robotic Mining Project<br />
+                            Department of Mining Engineering<br />
+                            University of Utah<br />
+                            William Browning Building Rm.313<br />
+                            135 S 1460 E<br />
+                            Salt Lake City, UT 84112</em></h4>
+                        <h4>All donations are tax deductible. The team is a 501(c)(3) entity as a project of the University of Utah. Any donation questions may be directed to utahstudentrobotics@gmail.com Thank you for your support!</h4>
                     </div>
                 </div>
             </>
