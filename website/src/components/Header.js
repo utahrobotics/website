@@ -1,14 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Navbar, Nav } from 'react-bootstrap'
 import Logo from '../static/Logo.png'
 
 
 class Header extends React.Component {
 
-    state = {
-        selected: 'home'
+    constructor(props) {
+        super(props)
+
+        this.menuRef = React.createRef()
+        this.compRef = React.createRef()
+        this.state = {
+            selected: 'home'
+        }
     }
+
+
 
     componentDidMount() {
         let selected = ''
@@ -26,47 +33,62 @@ class Header extends React.Component {
                 selected = 'contact'
                 break
             default:
-                selected='home'
+                selected = 'home'
                 break
         }
         this.setState({ selected: selected })
+        this.changeMenuPadding()
+        window.addEventListener("resize", this.changeMenuPadding)
     }
 
+    changeMenuPadding() {
+        if (getComputedStyle(document.getElementsByClassName("navbar-toggler").item(0)).display !== "none") {
+            document.getElementsByClassName("navbar-nav").item(0).style["padding-top"] = "50px"
+        }
+        else {
+            document.getElementsByClassName("navbar-nav").item(0).style["padding-top"] = "0px"
+        }
+    }
 
     render() {
+        console.log(window.location)
         return (
             <>
-                <Navbar bg="light" style={{ width: "100%", height: "15vh", zIndex: "10", position: "fixed" }}>
-                    <Navbar.Brand href="/">
-                        <img
-                            src={Logo}
-                            height="100"
-                            className="d-inline-block align-top"
-                            alt="Utah Student Robotics logo"
-                        />
-                    </Navbar.Brand>
-                    <Nav
-                        className="ml-auto header-nav"
-                        variant="pills"
-                        activeKey="/home"
-                        style={{ marginRight: "50px" }}
-                        onSelect={selectedKey => alert(`selected ${selectedKey}`)}
-                    >
-                        <Nav.Item className={this.state.selected === 'home' ? "active" : null}>
-                            <Link to="/" onClick={() => this.setState({ selected: 'home' })}>Home</Link>
-                        </Nav.Item>
-                        <Nav.Item className={this.state.selected === 'about' ? "active" : null}>
-                            <Link to="/about" onClick={() => this.setState({ selected: 'about' })}>About</Link>
-                        </Nav.Item>
-                        <Nav.Item className={this.state.selected === 'sponsors' ? "active" : null}>
-                            <Link to="/sponsors" onClick={() => this.setState({ selected: 'sponsors' })}>Sponsors</Link>
-                        </Nav.Item>
-                        <Nav.Item className={this.state.selected === 'contact' ? "active" : null}>
-                            <Link to="/contact" onClick={() => this.setState({ selected: 'contact' })}>Contact Us</Link>
-                        </Nav.Item>
-                    </Nav>
+                <Navbar.Brand href="/" className="brand">
+                    <img
+                        src={Logo}
+                        height="100"
+                        className="d-inline-block align-top"
+                        alt="Utah Student Robotics logo"
+                    />
+                </Navbar.Brand>
+                <Navbar bg="light" variant="light" expand="lg" style={{ width: "100%", zIndex: "10", position: "fixed" }}>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" className="ml-auto" />
+                    <Navbar.Collapse id="basic-navbar-nav" className="ml-auto">
+                        <Nav
+                            className="ml-auto"
+                            activeKey="/home"
+                            ref={this.compRef}
+                        >
+                            <Nav.Link href="/">
+                                Home
+                            </Nav.Link>
+                            <Nav.Link href="/about">
+                                About
+                            </Nav.Link>
+                            <Nav.Link href="/sponsors">
+                                Sponsors
+                            </Nav.Link>
+                            <Nav.Link href="/resources">
+                                Resources
+                            </Nav.Link>
+                            <Nav.Link href="/contact">
+                                Contact Us
+                            </Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
                 </Navbar>
-                <div style={{ height: "15vh" }}></div>
+                {window.location.pathname === "/" ? null : <div style={{ height: "15vh" }}></div>}
             </>
         )
     }

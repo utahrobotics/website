@@ -4,6 +4,8 @@ import About from './components/About'
 import Sponsors from './components/Sponsors'
 import { Switch, Route } from "react-router-dom";
 import Header from './components/Header';
+import Contact from './components/Contact'
+import Resources from './components/Resources'
 import {
   CSSTransition,
   TransitionGroup
@@ -14,7 +16,7 @@ function Main() {
     <>
       <Route render={({ location }) => (
         <>
-          <Header location={location}/>
+          <Header location={location} />
           <TransitionGroup>
             <CSSTransition
               key={location.key}
@@ -23,7 +25,9 @@ function Main() {
               <Switch location={location}>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={About} />
-                <Route exact path="/sponsors" component={Sponsors} />
+                <Route exact path="/sponsors" component={Sponsors} /><Route exact path="/sponsors" component={Sponsors} />
+                <Route exact path="/resources" component={Resources} />
+                <Route exact path="/contact" component={Contact} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>

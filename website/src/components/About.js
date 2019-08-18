@@ -91,7 +91,7 @@ class About extends React.Component {
                     <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo suscipit quis nobis aspernatur, esse et repellendus accusantium! Eligendi reprehenderit necessitatibus soluta asperiores ad enim dolorem rem aperiam sapiente, itaque non excepturi cum quasi magni obcaecati quod doloribus error. Itaque ducimus ea nemo quisquam, fuga labore ratione dicta asperiores nostrum magni?</h5>
                 </div>
                 <div className="robot-section">
-                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <h2>Sandcrawler</h2>
                     <Spring
                         from={{
                             opacity: 0,
@@ -107,7 +107,7 @@ class About extends React.Component {
                     <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo suscipit quis nobis aspernatur, esse et repellendus accusantium! Eligendi reprehenderit necessitatibus soluta asperiores ad enim dolorem rem aperiam sapiente, itaque non excepturi cum quasi magni obcaecati quod doloribus error. Itaque ducimus ea nemo quisquam, fuga labore ratione dicta asperiores nostrum magni?</h5>
                 </div>
                 <div className="robot-section">
-                    <h2>Lorem ipsum dolor sit amet.</h2>
+                    <h2>AMEE</h2>
                     <Spring
                         from={{
                             opacity: 0,

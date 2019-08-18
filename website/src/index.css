@@ -23,7 +23,6 @@ body{
 
 .page{
     position: absolute;
-    top: 15vh;
     left: 0;
     right: 0;
 }
@@ -54,41 +53,19 @@ body{
     filter: blur(10px);
 }
 
-.header-nav {
-    font-size: 30px;
+.brand {
+    position: fixed;
+    z-index: 11;
+    background-color: #F8F9FA;
+    margin-left: 30px;
+    padding: 10px;
+    border-radius: 50%;
 }
 
-.header-nav .nav-item {
-    min-height: 10vh;
-    padding-left: 10px;
-    padding-right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-}
-
-.header-nav .nav-item {
-    margin-left: 5px;
-}
-
-.header-nav .nav-item a {
-    color: black;
-}
-
-.header-nav .nav-item.active {
-    background-color: rgba(0,0,0,.4);
-}
-.header-nav .nav-item.active:hover {
-    background-color: rgba(0,0,0,.4);
-}
-
-.header-nav .nav-item:hover {
-    background-color: rgba(0,0,0,.2);
-}
-
-.header-nav .nav-item a:hover {
-    text-decoration: none;
+.navbar-nav .nav-link {
+    font-size: 25px;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
 }
 
 .darken {
@@ -168,12 +145,6 @@ body{
     margin-bottom: 0;
 }
 
-.page{
-    background-color: white;
-    text-align: center;
-    font-family: 'Lora', serif;
-}
-
 .page h1, .page h2 {
     font-size: 300%
 }
@@ -242,6 +213,18 @@ body{
 .sponsors-bit h2 {
     text-align: right;
     border-bottom: 3px solid black;
+}
+
+/* Resources */
+.category-head {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px #555 solid;
+}
+
+.card-header{
+    cursor: pointer;
 }
 
 /* Animations */
