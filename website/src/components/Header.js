@@ -1,17 +1,19 @@
 import React from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
 import Logo from '../static/Logo.png'
-
+import { Spring, config } from 'react-spring/renderprops'
 
 class Header extends React.Component {
 
     constructor(props) {
         super(props)
 
+        this.handleScroll = this.handleScroll.bind(this)
         this.menuRef = React.createRef()
         this.compRef = React.createRef()
         this.state = {
-            selected: 'home'
+            selected: 'home',
+            logoHeight: "100"
         }
     }
 
@@ -39,6 +41,17 @@ class Header extends React.Component {
         this.setState({ selected: selected })
         this.changeMenuPadding()
         window.addEventListener("resize", this.changeMenuPadding)
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll(evt) {
+        let scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        if (scrollPos > 30 && this.state.logoHeight === "100") {
+            this.setState({ logoHeight: "35" })
+        }
+        else if (scrollPos < 30 && this.state.logoHeight === "35") {
+            this.setState({ logoHeight: "100" })
+        }
     }
 
     changeMenuPadding() {
@@ -54,14 +67,24 @@ class Header extends React.Component {
         console.log(window.location)
         return (
             <>
-                <Navbar.Brand href="/" className="brand">
-                    <img
-                        src={Logo}
-                        height="100"
-                        className="d-inline-block align-top"
-                        alt="Utah Student Robotics logo"
-                    />
-                </Navbar.Brand>
+                <Spring
+                    from={{
+                        height: "100"
+                    }}
+                    to={{
+                        height: this.state.logoHeight === "35" ? "35" : "100"
+                    }}
+                    config={config.stiff}>
+                    {props =>
+                        <Navbar.Brand href="/" className="brand">
+                            <img
+                                src={Logo}
+                                height={props.height}
+                                className="d-inline-block align-top"
+                                alt="Utah Student Robotics logo"
+                            />
+                        </Navbar.Brand>}
+                </Spring>
                 <Navbar bg="light" variant="light" expand="lg" style={{ width: "100%", zIndex: "10", position: "fixed" }}>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" className="ml-auto" />
                     <Navbar.Collapse id="basic-navbar-nav" className="ml-auto">
