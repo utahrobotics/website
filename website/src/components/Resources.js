@@ -168,6 +168,8 @@ class Resources extends React.Component {
                                             <ul>
                                                 <li>Link to <a href="http://eagle.autodesk.com/eagle/software-versions/44">Eagle 9.4.1</a></li>
                                                 <li>Link to <a href="https://www.diymodules.org/eagle-show-object?type=usr&id=2786&part=_hhn_attiny25_45_85.lbr&device=ATTINY85%2A">ATTiny library</a></li>
+                                                <li>Link to <a href="https://www.mouser.com/datasheet/2/268/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATti-1315542.pdf">ATTINY25/45/85 Datasheet</a></li>
+                                                <li>Link to <a href="https://www.tweaking4all.com/hardware/arduino/arduino-ws2812-led/">addressable LED strip overview</a></li>
                                             </ul>
                                         </Card.Body>
                                     </Accordion.Collapse>
