@@ -9,6 +9,18 @@ class Resources extends React.Component {
         return (
             <Accordion style={{ marginTop: "50px" }}>
                 <Card>
+
+                    <Accordion.Toggle as={Card.Header} eventKey="6">
+                        General Resources
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="6">
+                        <Card.Body>
+                            <ul>
+                                <li>Link to <a href="https://www.nasa.gov/offices/education/centers/kennedy/technology/nasarmc.html">NASA RMC site</a></li>
+                            </ul>
+                        </Card.Body>
+                    </Accordion.Collapse>
+
                     <Accordion.Toggle as={Card.Header} eventKey="0">
                         Programming Resources
                     </Accordion.Toggle>
@@ -124,12 +136,49 @@ class Resources extends React.Component {
                                         </Card.Body>
                                     </Accordion.Collapse>
                                 </Card>
+                                <Card>
+                                    <Accordion.Toggle as={Card.Header} eventKey="4">
+                                        Links
+                                    </Accordion.Toggle>
+                                    <Accordion.Collapse eventKey="4">
+                                        <ul>
+                                            <li><a href="https://github.com/utahrobotics">Team GitHub</a></li>
+                                        </ul>
+                                    </Accordion.Collapse>
+                                </Card>
+                            </Accordion>
+                        </Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+
+                <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="4">
+                        Electrical Resources
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="4">
+                        <Card.Body>
+
+                            <Accordion>
+                                <Card>
+                                    <Accordion.Toggle as={Card.Header} eventKey="0">
+                                        Eagle Demo
+                                    </Accordion.Toggle>
+                                    <Accordion.Collapse eventKey="0">
+                                        <Card.Body>
+                                            <ul>
+                                                <li>Link to <a href="http://eagle.autodesk.com/eagle/software-versions/44">Eagle 9.4.1</a></li>
+                                                <li>Link to <a href="https://www.diymodules.org/eagle-show-object?type=usr&id=2786&part=_hhn_attiny25_45_85.lbr&device=ATTINY85%2A">ATTiny library</a></li>
+                                            </ul>
+                                        </Card.Body>
+                                    </Accordion.Collapse>
+                                </Card>
                             </Accordion>
 
 
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
+
                 <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="1">
                         Common Acronyms
@@ -163,6 +212,8 @@ class Resources extends React.Component {
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
+
+
                 <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="2">
                         Motor Controller

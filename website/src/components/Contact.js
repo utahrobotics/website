@@ -18,7 +18,8 @@ class Contact extends React.Component {
             </form>
 
         return (
-            <ContactForm />
+            //<ContactForm />
+            <h3 style={{ textAlign: "center" }}>You can contact us with questions, comments, and anything else at <a href="mailto:name@email.com">utahstudentrobotics@gmail.com</a></h3>
         )
     }
 }

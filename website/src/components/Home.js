@@ -38,7 +38,6 @@ class Home extends React.Component {
                 <div className="blur">
                     <Jumbotron fluid={true} className="jumbo" style={{ backgroundImage: `url(${Gears})` }}>
                         <div className={"darken" + this.state.darkenShow} key="dfgsdf">
-                            YEEEEEt
                         </div>
                     </Jumbotron>
                 </div>

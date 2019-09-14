@@ -21,18 +21,12 @@ body{
     position: relative;
 }
 
-.page{
-    position: absolute;
-    left: 0;
-    right: 0;
-}
-
 .right {
     float: right;
 }
 
 .jumbo {
-    height: 85vh;
+    height: 100vh;
     width: 100%;
     top:0;
     left:0;
