@@ -71,10 +71,11 @@ class About extends React.Component {
                             opacity: props.opacity,
                         }} />}
                     </Spring>
-                    <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt libero illo dicta distinctio minus aspernatur consequatur. Mollitia cupiditate neque obcaecati recusandae! Eum expedita amet quia illo facilis quidem soluta ullam magni maiores vero laboriosam enim, perspiciatis doloribus sapiente? Esse doloremque, sequi laborum molestiae omnis itaque iste accusamus beatae reprehenderit nihil quisquam tenetur, nam temporibus repudiandae inventore delectus ullam? Ducimus rerum tempore temporibus exercitationem perferendis repudiandae, voluptate consequatur quidem dolores obcaecati cum porro? Veritatis nihil, labore iste voluptates commodi vero officia nisi numquam, cum odio voluptatibus! Voluptatum vel autem labore unde assumenda officiis nobis quis architecto cumque quo! Inventore dicta sunt autem labore officiis repellat dolore, consectetur illo culpa odio facilis cum fugit atque facere animi, repudiandae amet at ea. Ducimus ipsum repellat recusandae quasi ex tenetur culpa, dolore, earum adipisci cum enim vero quisquam quo ea sit quibusdam iure aliquam laborum cupiditate architecto, corrupti dolorum? Minus explicabo iure facilis dolorem!</h5>
+                    <h5>We are a student-lead and student-organized club, whose goal is to enhance members' understanding of robotics and provide practical engineering experience. Each year we compete in the NASA Robotic Mining Competition. Our efforts throughout the year culminate into one large complex robot. The Robot's sole purpose is off-world mining. A lot of research, design, assembly is provided by the team to support that purpose. Each robot we build is unique and thought must be put into how it will move, dig, automate, be powered, be shaped, etc.. The club is free to join and you may get a chance to come to Florida with select members of the team to represent our university in front of NASA scientists and heads of industry.</h5>
                 </div>
-                <h1>Our Robots</h1>
+
                 <div className="robot-section">
+                    <h1>Our Robots</h1>
                     <h2>Work in Progress (name TBD)</h2>
                     <Spring
                         from={{
