@@ -3,19 +3,19 @@ import React from 'react'
 class Contact extends React.Component {
 
     render() {
-        let ContactForm = () =>
-            <form method="POST">
-                <label htmlFor="name">Name</label>
-                <input type="text" name="name" />
+        // let ContactForm = () =>
+        //     <form method="POST">
+        //         <label htmlFor="name">Name</label>
+        //         <input type="text" name="name" />
 
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" />
+        //         <label htmlFor="email">Email</label>
+        //         <input type="email" name="email" />
 
-                <label htmlFor="message">Message</label>
-                <textarea name="message" rows="3"></textarea>
+        //         <label htmlFor="message">Message</label>
+        //         <textarea name="message" rows="3"></textarea>
 
-                <input type="submit" />
-            </form>
+        //         <input type="submit" />
+        //     </form>
 
         return (
             //<ContactForm />

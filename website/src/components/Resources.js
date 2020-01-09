@@ -1,5 +1,5 @@
 import React from 'react'
-import { Accordion, Card, Button } from 'react-bootstrap'
+import { Accordion, Card } from 'react-bootstrap'
 
 class Resources extends React.Component {
 
