@@ -1,7 +1,33 @@
 import React from 'react'
 import { Accordion, Card } from 'react-bootstrap'
 
+const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
+
 class Resources extends React.Component {
+
+    async handleMove(direction) {
+        // const response = await fetch('http://localhost:5000/move', {
+        //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        //     mode: 'no-cors', // no-cors, *cors, same-origin
+        //     headers: {
+        //         'Content-Type': 'application/x-www-form-urlencoded',
+        //     },
+        //     body: toUrlEncoded({ move: direction }),
+        //     credentials: 'omit'
+        // })
+
+        const response = await fetch('http://usr.coe.utah.edu/move', {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'no-cors', // no-cors, *cors, same-origin
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: toUrlEncoded({ move: direction }),
+            credentials: 'omit'
+        })
+
+        return response
+    }
 
     render() {
 
@@ -252,6 +278,19 @@ class Resources extends React.Component {
                             <p>Turn on the output of the power supply. If everything was done correctly, the motor should not be moving but some LEDs should light up on the motor controller. Now slowly turn the potentiometer, the motor should start to turn. Changing the direction that you turn the potentiometer should change the direction of the motor. Try not to do drastic direction changes, this could damage things.
 
 Note on the potentiometer: turning the knob counter clockwise will cause the motor to go faster than if it were turned clockwise. I think this is caused by the potentiometer being old and not being an even resistance.</p>
+                        </Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+                <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="7">
+                        Super Secret Cool Stuff
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="7">
+                        <Card.Body>
+                            <button onClick={() => this.handleMove("forward")}>^</button>
+                            <button onClick={() => this.handleMove("left")}>left</button>
+                            <button onClick={() => this.handleMove("right")}>right</button>
+                            <button onClick={() => this.handleMove("backward")}>v</button>
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
