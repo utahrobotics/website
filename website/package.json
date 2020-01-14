@@ -8,7 +8,12 @@
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
     "react-scripts": "^3.3.0",
-    "react-setup": "^3.9.0"
+    "react-setup": "^3.9.0",
+    "softmax": "3.0.1",
+    "softmax-fn": "1.0.8",
+    "react-parallax": "3.0.3",
+    "react-router-dom": "5.1.2",
+    "react-spring": "8.0.27"
   },
   "scripts": {
     "start": "set HTTPS=true && set PORT=80 && START \"\" react-scripts start & node ./move_server.js",

@@ -1,4 +1,5 @@
 import React from 'react'
+import Arrow from '../static/arrow.png'
 import { Accordion, Card } from 'react-bootstrap'
 
 const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
@@ -16,7 +17,7 @@ class Resources extends React.Component {
         //     credentials: 'omit'
         // })
 
-        const response = await fetch('http://usr.coe.utah.edu/move', {
+        const response = await fetch('http://usr.coe.utah.edu:5000/move', {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'no-cors', // no-cors, *cors, same-origin
             headers: {
@@ -287,10 +288,14 @@ Note on the potentiometer: turning the knob counter clockwise will cause the mot
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="7">
                         <Card.Body>
-                            <button onClick={() => this.handleMove("forward")}>^</button>
-                            <button onClick={() => this.handleMove("left")}>left</button>
-                            <button onClick={() => this.handleMove("right")}>right</button>
-                            <button onClick={() => this.handleMove("backward")}>v</button>
+                            <div className="move-btns">
+                                <button className="hidden-btn" onClick={() => this.handleMove("forward")}><img alt="forward" src={Arrow} height="50" className="rotateimg270 hidden-btn" /></button>
+                                <div className="left-right-btns">
+                                    <button className="hidden-btn" onClick={() => this.handleMove("left")}><img alt="left" src={Arrow} height="50" className="rotateimg180 hidden-btn" /></button>
+                                    <button className="hidden-btn" onClick={() => this.handleMove("right")}><img alt="right" src={Arrow} height="50" /></button>
+                                </div>
+                                <button className="hidden-btn" onClick={() => this.handleMove("backward")}><img alt="backward" src={Arrow} height="50" className="rotateimg90 hidden-btn" /></button>
+                            </div>
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
