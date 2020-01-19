@@ -17,7 +17,7 @@ class Resources extends React.Component {
         //     credentials: 'omit'
         // })
 
-        const response = await fetch('http://usr.coe.utah.edu:5000/move', {
+        const response = await fetch('http://usr.coe.utah.edu:3100/move', {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'no-cors', // no-cors, *cors, same-origin
             headers: {
