@@ -116,7 +116,7 @@ class About extends React.Component {
                         config={config.wobbly}>
                         {props => <img ref={this.rover2ref} key="rover" className="rover" src={Rover2} alt="Rover" style={{ ...props, ...{ height: "300px" } }} />}
                     </Spring>
-                    <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo suscipit quis nobis aspernatur, esse et repellendus accusantium! Eligendi reprehenderit necessitatibus soluta asperiores ad enim dolorem rem aperiam sapiente, itaque non excepturi cum quasi magni obcaecati quod doloribus error. Itaque ducimus ea nemo quisquam, fuga labore ratione dicta asperiores nostrum magni?</h5>
+                    <h5>The Sandcrawler is called that because it resembles the jawa-piloted sandcrawlers from Tatooine in StarWars. It features a bucket ladder digging system, a conveyor belt for storage and dumping, and an Nvidia Jetson TX2 for its computer. This robot also claimed third place overall and an award for the use of a vibrator to reject dust from the collected material with the aid of many holes and slots that allow the dust to pass through.</h5>
                 </div>
                 <div className="robot-section">
                     <h2>Autonomous Martian Environment Excavator, a.k.a AMEE</h2>
@@ -132,7 +132,7 @@ class About extends React.Component {
                         config={config.wobbly}>
                         {props => <img ref={this.rover3ref} key="rover" className="rover" src={Rover3} alt="Rover" style={{ ...props, ...{ height: "300px" } }} />}
                     </Spring>
-                    <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo suscipit quis nobis aspernatur, esse et repellendus accusantium! Eligendi reprehenderit necessitatibus soluta asperiores ad enim dolorem rem aperiam sapiente, itaque non excepturi cum quasi magni obcaecati quod doloribus error. Itaque ducimus ea nemo quisquam, fuga labore ratione dicta asperiores nostrum magni?</h5>
+                    <h5>AMEE stands for autonomous martian environment excavator. This robot features a front loading bucket with a four-wheel skid-steer system and runs on the Nvidia Jetson TX1 computer. At the 2017 NASA Robotic Mining Competition, this robot collected the most material overall and took third place in the competition. This robot also won an innovation award with it's unique mechanism to change the center of mass. This is achieved by mounting the whole digging mechanism on a linear track and moving it forwards and backwards over the robot's frame. This is necessary because the the bucket on the front can be heavy enough to tip the root forward when fully loaded.</h5>
                 </div>
                 <div className="robot-section">
                     <h2>Master Chief</h2>
