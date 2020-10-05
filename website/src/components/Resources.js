@@ -1,6 +1,7 @@
 import React from 'react'
 import Arrow from '../static/arrow.png'
 import { Accordion, Card } from 'react-bootstrap'
+import Mod from '../static/TuringComplete.jar'
 
 const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
 
@@ -282,11 +283,23 @@ Note on the potentiometer: turning the knob counter clockwise will cause the mot
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
+
                 <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="7">
-                        Super Secret Cool Stuff
+                        Minecraft Mod Download
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="7">
+                        <Card.Body>
+                            <a href={Mod}>USR Turing Complete Minecraft Mod for 1.16.3</a>
+                        </Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+
+                <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="8">
+                        Super Secret Cool Stuff
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="8">
                         <Card.Body>
                             <div className="move-btns">
                                 <button className="hidden-btn" onClick={() => this.handleMove("forward")}><img alt="forward" src={Arrow} height="50" className="rotateimg270 hidden-btn" /></button>
