@@ -1,17 +1,12 @@
 import React from 'react'
 import Northrop from '../static/sponsors/northrop.jpg'
 import Unasa from '../static/sponsors/unasa.jpg'
-import WarrenCat from '../static/sponsors/warren-cat.jpg'
-import BigD from '../static/sponsors/bigd.png'
-import Convene from '../static/sponsors/convene.png'
-import GA from '../static/sponsors/ga.jpg'
-import Fiero from '../static/sponsors/fiero.png'
-import GreenEnergy from '../static/sponsors/green-energy.png'
-import Millcreek from '../static/sponsors/millcreek.png'
-import RioTinto from '../static/sponsors/rio-tinto.jpg'
-import Speeds from '../static/sponsors/speeds.png'
 import UtahMining from '../static/sponsors/utah-mining.jpg'
 import WheelerCat from '../static/sponsors/wheeler-cat.png'
+import taulman from '../static/sponsors/taulman.png'
+import delvies from '../static/sponsors/delvies.png'
+import ninjatek from '../static/sponsors/ninjatek.png'
+import maxon from '../static/sponsors/maxon.jpg'
 import { Spring, config } from 'react-spring/renderprops'
 
 class Sponsors extends React.Component {
@@ -85,7 +80,7 @@ class Sponsors extends React.Component {
             })
         }
         if (this.containerRef.current) {
-            const numItems = 13
+            const numItems = 8
             let start = 4.8
             const step = (2 * Math.PI) / numItems
 
@@ -117,17 +112,12 @@ class Sponsors extends React.Component {
                     <div ref={this.containerRef} className='circle-container'>
                         <img className="sponsor" style={{ top: this.state.imageCoords[1][0], left: this.state.imageCoords[1][1] }} src={Unasa} alt="sponsor" />
                         <img className="sponsor" style={{ top: this.state.imageCoords[0][0], left: this.state.imageCoords[0][1] }} src={Northrop} alt="sponsor" />
-                        <img className="sponsor" style={{ top: this.state.imageCoords[2][0], left: this.state.imageCoords[2][1] }} src={WarrenCat} alt="sponsor" />
-                        <img className="sponsor" style={{ top: this.state.imageCoords[3][0], left: this.state.imageCoords[3][1] }} src={BigD} alt="sponsor" />
-                        <img className="sponsor" style={{ top: this.state.imageCoords[4][0], left: this.state.imageCoords[4][1] }} src={Convene} alt="sponsor" />
-                        <img className="sponsor" style={{ top: this.state.imageCoords[5][0], left: this.state.imageCoords[5][1] }} src={GA} alt="sponsor" />
-                        <img className="sponsor" style={{ top: this.state.imageCoords[6][0], left: this.state.imageCoords[6][1] }} src={Fiero} alt="sponsor" />
-                        <img className="sponsor" style={{ top: this.state.imageCoords[7][0], left: this.state.imageCoords[7][1] }} src={GreenEnergy} alt="sponsor" />
-                        <img className="sponsor" style={{ top: this.state.imageCoords[8][0], left: this.state.imageCoords[8][1] }} src={Millcreek} alt="sponsor" />
-                        <img className="sponsor" style={{ top: this.state.imageCoords[9][0], left: this.state.imageCoords[9][1] }} src={RioTinto} alt="sponsor" />
-                        <img className="sponsor" style={{ top: this.state.imageCoords[10][0], left: this.state.imageCoords[10][1] }} src={Speeds} alt="sponsor" />
-                        <img className="sponsor" style={{ top: this.state.imageCoords[11][0], left: this.state.imageCoords[11][1] }} src={UtahMining} alt="sponsor" />
-                        <img className="sponsor" style={{ top: this.state.imageCoords[12][0], left: this.state.imageCoords[12][1] }} src={WheelerCat} alt="sponsor" />
+                        <img className="sponsor" style={{ top: this.state.imageCoords[2][0], left: this.state.imageCoords[2][1] }} src={taulman} alt="sponsor" />
+                        <img className="sponsor" style={{ top: this.state.imageCoords[3][0], left: this.state.imageCoords[3][1] }} src={delvies} alt="sponsor" />
+                        <img className="sponsor" style={{ top: this.state.imageCoords[4][0], left: this.state.imageCoords[4][1] }} src={maxon} alt="sponsor" />
+                        <img className="sponsor" style={{ top: this.state.imageCoords[5][0], left: this.state.imageCoords[5][1] }} src={ninjatek} alt="sponsor" />
+                        <img className="sponsor" style={{ top: this.state.imageCoords[6][0], left: this.state.imageCoords[6][1] }} src={UtahMining} alt="sponsor" />
+                        <img className="sponsor" style={{ top: this.state.imageCoords[7][0], left: this.state.imageCoords[7][1] }} src={WheelerCat} alt="sponsor" />
                     </div>
                 </div>
                 <div className="sponsors-content">
