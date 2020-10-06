@@ -1,5 +1,5 @@
 import React from 'react'
-import Team from '../static/team_transparent.png'
+import Team from '../static/team.png'
 import Rover from '../static/rover.png'
 import Rover2 from '../static/rover2.png'
 import Rover3 from '../static/rover3.png'
@@ -61,7 +61,7 @@ class About extends React.Component {
         return (
             <div className="page">
                 <div className="about-section">
-                    <h1>We Are Utah Student Robotics</h1>
+                    <h1 style={{ fontSize: 50 }}>We Are Utah Student Robotics</h1>
                     <Spring
                         from={{
                             opacity: 0,
@@ -82,7 +82,7 @@ class About extends React.Component {
 
                 <div className="robot-section">
                     <h1>Our Robots</h1>
-                    <h2>Name TBD (But probably Truely Heartwarming Rover of Orbital Celestial Kinetic Motion Operating Relatively Tactfully Or Not, a.k.a THROCKMORTON)</h2>
+                    <h2>Name TBD (But probably not Truely Heartwarming Rover of Orbital Celestial Kinetic Motion Operating Relatively Tactfully Or Not, a.k.a THROCKMORTON)</h2>
                     <Spring
                         from={{
                             opacity: 0,
@@ -148,7 +148,10 @@ class About extends React.Component {
                         config={config.wobbly}>
                         {props => <img ref={this.rover4ref} key="rover" className="rover" src={Rover4} alt="Rover" style={{ ...props, ...{ height: "300px" } }} />}
                     </Spring>
-                    <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo suscipit quis nobis aspernatur, esse et repellendus accusantium! Eligendi reprehenderit necessitatibus soluta asperiores ad enim dolorem rem aperiam sapiente, itaque non excepturi cum quasi magni obcaecati quod doloribus error. Itaque ducimus ea nemo quisquam, fuga labore ratione dicta asperiores nostrum magni?</h5>
+                    <h5>
+                        Master chief is a mysterious robot that no one on the current team has ever seen. The web-dev for the site was never given a description to this elusive specimen. It's believed
+                        that it haunts the circuitry of the current robots: shorting circuits and messing up tolerances. Pretty spooky if you ask me.
+                    </h5>
                 </div>
             </div>
         )
