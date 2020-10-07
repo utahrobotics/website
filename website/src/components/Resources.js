@@ -3,7 +3,6 @@ import Arrow from '../static/arrow.png'
 import { Accordion, Card } from 'react-bootstrap'
 import Mod from '../static/TuringComplete.jar'
 import JEI from '../static/jei.jar'
-import ModDownloadTutorial from '../static/mod_download_tutorial.mp4'
 
 const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
 
