@@ -4,6 +4,7 @@ import About from './components/About'
 import Sponsors from './components/Sponsors'
 import { Switch, Route } from "react-router-dom";
 import Header from './components/Header';
+import Courses from './components/Courses'
 import Contact from './components/Contact'
 import Resources from './components/Resources'
 import {
@@ -28,6 +29,7 @@ function Main() {
                 <Route exact path="/sponsors" component={Sponsors} /><Route exact path="/sponsors" component={Sponsors} />
                 <Route exact path="/resources" component={Resources} />
                 <Route exact path="/contact" component={Contact} />
+                <Route exact path="/courses/:level(k4|58|912)" component={Courses} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>

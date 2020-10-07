@@ -307,3 +307,21 @@ body{
     transition: transform 1000ms ease-in-out;
   }
   
+  .course_sidebar {
+      position: fixed;
+      margin-left: 10px;
+  }
+
+  .course_sidebar div {
+      border: 1px gray solid;
+      padding: 20px;
+  }
+
+  .course_sidebar .section_tab{
+    transition: 0.3s;
+}
+
+  .course_sidebar .section_tab:hover{
+      background-color: red;
+      color: white;
+  }

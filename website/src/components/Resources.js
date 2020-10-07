@@ -2,6 +2,8 @@ import React from 'react'
 import Arrow from '../static/arrow.png'
 import { Accordion, Card } from 'react-bootstrap'
 import Mod from '../static/TuringComplete.jar'
+import JEI from '../static/jei.jar'
+import ModDownloadTutorial from '../static/mod_download_tutorial.mp4'
 
 const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
 
@@ -290,7 +292,15 @@ Note on the potentiometer: turning the knob counter clockwise will cause the mot
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="7">
                         <Card.Body>
-                            <a href={Mod}>USR Turing Complete Minecraft Mod for 1.16.3</a>
+                            <h2>Mod Installation Tutorial</h2>
+                            <iframe title="Mod Tutorial" width="560" height="315" src="https://www.youtube.com/embed/WN0l28SusLg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+                            <h2>Relevant Software Download Links</h2>
+                            <a href="https://www.java.com/en/download/manual.jsp">Download Java Run Time Environment</a><br />
+                            <a href="http://files.minecraftforge.net/">Download Forge</a>
+                            <h2>Mod Downloads</h2>
+                            <a href={Mod}>USR Turing Complete Minecraft Mod for 1.16.3</a><br />
+                            <a href={JEI}>JEI mod (same install procedure as the USR mod)</a>
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>

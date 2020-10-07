@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Nav } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import Logo from '../static/Logo.png'
 import { Spring, config } from 'react-spring/renderprops'
 
@@ -102,6 +102,13 @@ class Header extends React.Component {
                             <Nav.Link href="/sponsors">
                                 Sponsors
                             </Nav.Link>
+                            <NavDropdown title="Online Courses" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/courses/k4">Grades K-4</NavDropdown.Item>
+                                <NavDropdown.Item href="/courses/58">Grades 5-8</NavDropdown.Item>
+                                <NavDropdown.Item href="/courses/912">Grades 9-12</NavDropdown.Item>
+                                {/* <NavDropdown.Divider />
+                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
+                            </NavDropdown>
                             <Nav.Link href="/resources">
                                 Resources
                             </Nav.Link>
