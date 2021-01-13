@@ -29,7 +29,7 @@ function Main() {
                 <Route exact path="/sponsors" component={Sponsors} /><Route exact path="/sponsors" component={Sponsors} />
                 <Route exact path="/resources" component={Resources} />
                 <Route exact path="/contact" component={Contact} />
-                <Route exact path="/courses/:level(k4|58|912)" component={Courses} />
+                <Route exact path="/courses/:level(k4|58|912)/:vid?" component={Courses} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>

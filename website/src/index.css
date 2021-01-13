@@ -315,6 +315,7 @@ body{
   .course_sidebar div {
       border: 1px gray solid;
       padding: 20px;
+      background-color: rgb(255, 255, 255);
   }
 
   .course_sidebar .section_tab{
@@ -324,4 +325,16 @@ body{
   .course_sidebar .section_tab:hover{
       background-color: red;
       color: white;
+      cursor: pointer;
+  }
+
+  .comments_container {
+      margin-left: 300px;
+      width: 1280px;
+      padding-bottom: 50px;
+  }
+
+  .comment {
+      border-bottom: 2px solid grey;
+      padding: 10px;
   }
