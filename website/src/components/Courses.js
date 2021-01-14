@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { Form, Button } from 'react-bootstrap'
 
+const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
+
 class Courses extends React.Component {
     constructor(props) {
         super(props)
@@ -105,23 +107,43 @@ class Courses extends React.Component {
     }
 
     updateComments() {
-        const url = 'http://localhost:5001/posts'
-        const params = new URLSearchParams()
-        params.append('level', this.state.level)
-        params.append('id', this.state.currVideo)
+        // const url = 'http://localhost:5001/posts'
+        // const params = new URLSearchParams()
+        // params.append('level', this.state.level)
+        // params.append('id', this.state.currVideo)
 
-        const config = {
+        // const config = {
+        //     headers: {
+        //         'Content-Type': 'application/x-www-form-urlencoded'
+        //     }
+        // }
+
+        // axios.post(url, params, config)
+        //     .then(data => {
+        //         console.log("response data", data.data)
+        //         this.setState({ comments: data.data })
+        //     })
+        //     .catch(err => console.log(err))
+
+        fetch('http://localhost:5001/posts', {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
-        }
-
-        axios.post(url, params, config)
-            .then(data => {
-                console.log("response data", data.data)
-                this.setState({ comments: data.data })
-            })
-            .catch(err => console.log(err))
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: toUrlEncoded({
+                level: this.state.level,
+                id: this.state.currVideo || 'ocean'
+            }),
+            credentials: 'omit'
+        }).then(response => {
+            return response.text()
+        }).then(data => {
+            console.log("response data", data ? data : [])
+            this.setState({ comments: data ? JSON.parse(data) : [] })
+        }).catch((error) => {
+            console.log(error)
+        })
     }
 
     submitComment() {
@@ -129,30 +151,55 @@ class Courses extends React.Component {
         var school = this.schoolInput.current.value
         var response = this.responseInput.current.value
 
-        const url = 'http://localhost:5001/post'
-        const params = new URLSearchParams()
+        this.nameInput.current.value = ""
+        this.schoolInput.current.value = ""
+        this.responseInput.current.value = ""
+
+        // const url = 'http://localhost:5001/post'
+        // const params = new URLSearchParams()
         var now = new Date()
         var month = now.getMonth() + 1
         var day = now.getDate()
         var year = now.getFullYear()
-        params.append('name', name)
-        params.append('school', school)
-        params.append('body', response)
-        params.append('level', this.state.level)
-        params.append('id', this.state.currVideo)
-        params.append('timestamp', month + "/" + day + "/" + year)
+        // params.append('name', name)
+        // params.append('school', school)
+        // params.append('body', response)
+        // params.append('level', this.state.level)
+        // params.append('id', this.state.currVideo)
+        // params.append('timestamp', month + "/" + day + "/" + year)
 
-        const config = {
+        // const config = {
+        //     headers: {
+        //         'Content-Type': 'application/x-www-form-urlencoded'
+        //     }
+        // }
+
+        // axios.post(url, params, config)
+        //     .then(data => {
+        //         console.log("response data", data.data)
+        //         this.updateComments()
+        //     })
+        //     .catch(err => console.log(err))
+
+        fetch('http://localhost:5001/post', {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
-        }
-
-        axios.post(url, params, config)
-            .then(data => {
-                console.log("response data", data.data)
-                this.updateComments()
-            })
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: toUrlEncoded({
+                name: name,
+                school: school,
+                body: response,
+                level: this.state.level,
+                id: this.state.currVideo || 'ocean',
+                timestamp: month + "/" + day + "/" + year,
+            }),
+            credentials: 'omit'
+        }).then(data => {
+            console.log("response data", data.data)
+            this.updateComments()
+        })
             .catch(err => console.log(err))
     }
 
