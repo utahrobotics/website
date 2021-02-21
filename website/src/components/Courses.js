@@ -7,7 +7,7 @@ const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=
 
 class Courses extends React.Component {
     constructor(props) {
-        super(props)
+       	super(props)
         var level = props.match.params.level
         var vidId = props.match.params.vid
         var title = ""
@@ -22,22 +22,22 @@ class Courses extends React.Component {
             videos = [
                 {
                     title: "Ocean (Start Here)",
-                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/ERtdQWRrmvo" frameBorder="0" allowFullScreen></iframe>,
+                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/-eCi8vx9TVs" frameBorder="0" allowFullScreen></iframe>,
                     id: "ocean"
                 },
                 {
                     title: "Rainforest",
-                    source: <iframe title="rainforest" width="1280" height="720" src="https://www.youtube.com/embed/dIuihmMk4bA" frameBorder="0" allowFullScreen></iframe>,
+                    source: <iframe title="rainforest" width="1280" height="720" src="https://www.youtube.com/embed/61VXCcWwxG8" frameBorder="0" allowFullScreen></iframe>,
                     id: "rainforest"
                 },
                 {
                     title: "Robot",
-                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/RogFNwnFWpQ" frameBorder="0" allowFullScreen></iframe>,
+                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/L-MA8u9kl4U" frameBorder="0" allowFullScreen></iframe>,
                     id: "robot"
                 },
                 {
                     title: "Asteroid",
-                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/ff8cGTaQnjM" frameBorder="0" allowFullScreen></iframe>,
+                    source: <><iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/NNoFBkZCYGc" frameBorder="0" allowFullScreen></iframe><h3><a href="https://spaceplace.nasa.gov/asteroid-potatoes/en/">Potato Asteroids!</a></h3></>,
                     id: "asteroid"
                 },
 
@@ -48,22 +48,22 @@ class Courses extends React.Component {
             videos = [
                 {
                     title: "Ocean (Start Here)",
-                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/PXfOenMtmZ0" frameBorder="0" allowFullScreen></iframe>,
+                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/Md9ZfFf4y4E" frameBorder="0" allowFullScreen></iframe>,
                     id: "ocean"
                 },
                 {
                     title: "Rainforest",
-                    source: <iframe title="rainforest" width="1280" height="720" src="https://www.youtube.com/embed/7MTxJjSahGU" frameBorder="0" allowFullScreen></iframe>,
+                    source: <iframe title="rainforest" width="1280" height="720" src="https://www.youtube.com/embed/gFWPx8AnWmM" frameBorder="0" allowFullScreen></iframe>,
                     id: "rainforest"
                 },
                 {
                     title: "Robot",
-                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/164ORWeipmI" frameBorder="0" allowFullScreen></iframe>,
+                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/2wKwqWbVSQQ" frameBorder="0" allowFullScreen></iframe>,
                     id: "robot"
                 },
                 {
                     title: "Asteroid",
-                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/HoIqGAMwUbw" frameBorder="0" allowFullScreen></iframe>,
+                    source: <><iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/sr-yv8TwmH4" frameBorder="0" allowFullScreen></iframe><h3><a href="https://spaceplace.nasa.gov/asteroid-potatoes/en/">Potato Asteroids!</a></h3></>,
                     id: "asteroid"
                 },
             ]
@@ -73,22 +73,22 @@ class Courses extends React.Component {
             videos = [
                 {
                     title: "Ocean (Start Here)",
-                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/AwAOolTNva4" frameBorder="0" allowFullScreen></iframe>,
+                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/M7BpJ_qi02A" frameBorder="0" allowFullScreen></iframe>,
                     id: "ocean"
                 },
                 {
                     title: "Rainforest",
-                    source: <iframe title="rainforest" width="1280" height="720" src="https://www.youtube.com/embed/b3Z_ZsvKKlU" frameBorder="0" allowFullScreen></iframe>,
+                    source: <iframe title="rainforest" width="1280" height="720" src="https://www.youtube.com/embed/0q1LFn4XKsY" frameBorder="0" allowFullScreen></iframe>,
                     id: "rainforest"
                 },
                 {
                     title: "Robot",
-                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/fHcdHOwwneU" frameBorder="0" allowFullScreen></iframe>,
+                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/nvC6VX_otVs" frameBorder="0" allowFullScreen></iframe>,
                     id: "robot"
                 },
                 {
                     title: "Asteroid",
-                    source: <iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/0d1MgJ75BjE" frameBorder="0" allowFullScreen></iframe>,
+                    source: <><iframe title="Ocean intro" width="1280" height="720" src="https://www.youtube.com/embed/RhWK0oWqpxY" frameBorder="0" allowFullScreen></iframe><h3><a href="https://spaceplace.nasa.gov/asteroid-potatoes/en/">Potato Asteroids!</a></h3></>,
                     id: "asteroid"
                 },
             ]
@@ -125,7 +125,7 @@ class Courses extends React.Component {
         //     })
         //     .catch(err => console.log(err))
 
-        fetch('http://localhost:5001/posts', {
+        fetch('http://usr.coe.utah.edu:5001/posts', {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'cors', // no-cors, *cors, same-origin
             headers: {
@@ -181,7 +181,7 @@ class Courses extends React.Component {
         //     })
         //     .catch(err => console.log(err))
 
-        fetch('http://localhost:5001/post', {
+        fetch('http://usr.coe.utah.edu:5001/post', {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'cors', // no-cors, *cors, same-origin
             headers: {
