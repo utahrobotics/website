@@ -1,7 +1,7 @@
 import React from 'react'
 import Arrow from '../static/arrow.png'
 import { Accordion, Card } from 'react-bootstrap'
-import Mod from '../static/TuringComplete.jar'
+import Mod from '../static/TuringCompleteV1.0.jar'
 import JEI from '../static/jei.jar'
 
 const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
