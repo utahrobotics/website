@@ -4,6 +4,7 @@ import Rover from '../static/rover.png'
 import Rover2 from '../static/rover2.png'
 import Rover3 from '../static/rover3.png'
 import Rover4 from '../static/rover4.png'
+import ThrockAnim from '../static/final.mp4'
 import { Spring, config } from 'react-spring/renderprops'
 
 class About extends React.Component {
@@ -14,6 +15,7 @@ class About extends React.Component {
         this.rover2ref = React.createRef()
         this.rover3ref = React.createRef()
         this.rover4ref = React.createRef()
+        this.videoRef = React.createRef()
 
         this.handleScroll = this.handleScroll.bind(this)
     }
@@ -37,17 +39,35 @@ class About extends React.Component {
     }
 
     handleScroll(evt) {
-        console.log(evt)
-        console.log(window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0)
-        this.changeOnScroll(evt, "showRover1", this.rover1ref.current.offsetTop - 700)
-        this.changeOnScroll(evt, "showRover2", this.rover2ref.current.offsetTop - 700)
-        this.changeOnScroll(evt, "showRover3", this.rover3ref.current.offsetTop - 700)
-        this.changeOnScroll(evt, "showRover4", this.rover4ref.current.offsetTop - 700)
+        var w = window,
+            d = document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0],
+            y = w.innerHeight || e.clientHeight || g.clientHeight;
+        var windowBottom = w.scrollY + y;
+        var vidBottom = this.videoRef.current.offsetTop + this.videoRef.current.offsetHeight;
+        console.log(windowBottom + ", " + vidBottom)
+        if (windowBottom > vidBottom) {
+            this.videoRef.current.play()
+        }
+
+
+        // console.log(evt)
+        // console.log(window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0)
+        this.changeOnScroll(evt, "showRover1", this.rover1ref.current.offsetTop + this.rover1ref.current.offsetHeight)
+        this.changeOnScroll(evt, "showRover2", this.rover2ref.current.offsetTop + this.rover2ref.current.offsetHeight)
+        this.changeOnScroll(evt, "showRover3", this.rover3ref.current.offsetTop + this.rover3ref.current.offsetHeight)
+        this.changeOnScroll(evt, "showRover4", this.rover4ref.current.offsetTop + this.rover4ref.current.offsetHeight)
     }
 
-    changeOnScroll(evt, stateVar, scrollHeight) {
-        let scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        if (scrollPos > scrollHeight) {
+    changeOnScroll(evt, stateVar, bottomHeight) {
+        var w = window,
+            d = document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0],
+            y = w.innerHeight || e.clientHeight || g.clientHeight;
+        var windowBottom = w.scrollY + y;
+        if (windowBottom > bottomHeight) {
             if (this.state[stateVar] === false)
                 this.setState({ [stateVar]: true })
         }
@@ -96,11 +116,16 @@ class About extends React.Component {
                         {props => <img ref={this.rover1ref} key="rover" className="rover" src={Rover} alt="Rover" style={{ ...props, ...{ height: "300px" } }} />}
                     </Spring>
                     <h5>
-                        Our newest robot will be competing in the 2020 competition and has many exciting features. The mobility system is a rocker-bogie mechanism, the same kind that the Curiosity Rover uses.
+                        Our newest robot will be competing in the 2021 competition and has many exciting features. The mobility system is a rocker-bogie mechanism, the same kind that the Curiosity Rover uses.
                         The digging, storage, and release of mined material is all handled by a bucket drum design inspired by the RASSOR robot. This design will also use some advanced computing
                         to aid in the competition. A convolution neural net is used to analyze the sounds of the digging mechanism to determine what material is being mined, and an array of gyroscopes,
                         accelorometers, cameras, IMU's, ultra-wideband sensors and more is used to achieve autonomy.
                     </h5>
+                    <h2>Check out an animation of our newest robot</h2>
+                    <video width="100%" controls ref={this.videoRef} muted>
+                        <source src={ThrockAnim} type="video/mp4"></source>
+                                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 <div className="robot-section">
                     <h2>Sandcrawler</h2>
@@ -132,7 +157,7 @@ class About extends React.Component {
                         config={config.wobbly}>
                         {props => <img ref={this.rover3ref} key="rover" className="rover" src={Rover3} alt="Rover" style={{ ...props, ...{ height: "300px" } }} />}
                     </Spring>
-                    <h5>AMEE stands for autonomous martian environment excavator. This robot features a front loading bucket with a four-wheel skid-steer system and runs on the Nvidia Jetson TX1 computer. At the 2017 NASA Robotic Mining Competition, this robot collected the most material overall and took third place in the competition. This robot also won an innovation award with it's unique mechanism to change the center of mass. This is achieved by mounting the whole digging mechanism on a linear track and moving it forwards and backwards over the robot's frame. This is necessary because the the bucket on the front can be heavy enough to tip the root forward when fully loaded.</h5>
+                    <h5>AMEE stands for autonomous martian environment excavator. This robot features a front loading bucket with a four-wheel skid-steer system and runs on the Nvidia Jetson TX1 computer. At the 2017 NASA Robotic Mining Competition, this robot collected the most material overall and took third place in the competition. This robot also won an innovation award with it's unique mechanism to change the center of mass. This is achieved by mounting the whole digging mechanism on a linear track and moving it forwards and backwards over the robot's frame. This is necessary because the the bucket on the front can be heavy enough to tip the robot forward when fully loaded.</h5>
                 </div>
                 <div className="robot-section">
                     <h2>Master Chief</h2>
