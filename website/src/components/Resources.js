@@ -354,7 +354,7 @@ class Resources extends React.Component {
                                 <button onClick={() => this.populateIPs()}>View IP's</button>
                             </div>
                             <div>
-                                {this.state.ips.map(ip => {
+                                {this.state.ips.reverse().map(ip => {
                                     return (
                                         <div className="comment">
                                             <h6>Name: {ip.name}</h6>
