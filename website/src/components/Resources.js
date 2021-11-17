@@ -359,6 +359,7 @@ class Resources extends React.Component {
                                         <div className="comment">
                                             <h6>Name: {ip.name}</h6>
                                             <h5>IP: {ip.ip}</h5>
+                                            <h5>SSID: {ip.ssid?ip.ssid:""}</h5>
                                             <h5>Reported: {ip.time}</h5>
                                         </div>
                                     )
