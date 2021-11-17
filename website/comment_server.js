@@ -4,7 +4,7 @@ var cors = require('cors')
 
 const express = require('express')
 
-
+var ips = [];
 
 const app = express()
 app.use((req, res, next)=>{
@@ -37,6 +37,23 @@ low(adapter).then(db => {
         console.log("posts body:", req.body)
         console.log("responding with", db.get('comments').filter({ vidid: req.body.id + req.body.level }).value())
         res.send(db.get('comments').filter({ vidid: req.body.id + req.body.level }).value())
+    })
+
+
+    app.post('/ip', (req, res) => {
+        console.log("post body:", req.body)
+        ips.push({
+            name: req.body.name,
+            ip: req.body.ip,
+            time: new Date(),
+        })
+        res.send(ips)
+    })
+
+    app.post('/ips', (req, res) => {
+        console.log("posts body:", req.body)
+        console.log("responding with", ips)
+        res.send(ips)
     })
 
     app.listen(5001, () => { console.log("Listening on port 5001") })

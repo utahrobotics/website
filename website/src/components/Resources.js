@@ -7,6 +7,15 @@ import JEI from '../static/jei.jar'
 const toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
 
 class Resources extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            pwd: "",
+            ips: []
+        }
+    }
+
 
     async handleMove(direction) {
         // const response = await fetch('http://localhost:5000/move', {
@@ -30,6 +39,27 @@ class Resources extends React.Component {
         })
 
         return response
+    }
+
+    populateIPs() {
+        if (this.state.pwd === "usr") {
+            fetch('http://usr.coe.utah.edu:5001/ips', {
+            //fetch('http://localhost:5001/ips', {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                mode: 'cors', // no-cors, *cors, same-origin
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                credentials: 'omit'
+            }).then(response => {
+                return response.text()
+            }).then(data => {
+                console.log(data ? JSON.parse(data) : [])
+                this.setState({ ips: data ? JSON.parse(data) : [] })
+            }).catch((error) => {
+                console.log(error)
+            })
+        }
     }
 
     render() {
@@ -217,7 +247,7 @@ class Resources extends React.Component {
                     <Accordion.Collapse eventKey="1">
                         <Card.Body>
                             NASA loves acronyms, here are some commonly used ones.
-                        <ul>
+                            <ul>
                                 <li><b>AMEE</b>: Autonomous Martian Environment Excavator</li>
                                 <li><b>DOF</b>: Degree Of Freedom</li>
                                 <li><b>ESD</b>: Electro-Static Discharge</li>
@@ -280,7 +310,7 @@ class Resources extends React.Component {
                             <h1>Running the Motor</h1>
                             <p>Turn on the output of the power supply. If everything was done correctly, the motor should not be moving but some LEDs should light up on the motor controller. Now slowly turn the potentiometer, the motor should start to turn. Changing the direction that you turn the potentiometer should change the direction of the motor. Try not to do drastic direction changes, this could damage things.
 
-Note on the potentiometer: turning the knob counter clockwise will cause the motor to go faster than if it were turned clockwise. I think this is caused by the potentiometer being old and not being an even resistance.</p>
+                                Note on the potentiometer: turning the knob counter clockwise will cause the motor to go faster than if it were turned clockwise. I think this is caused by the potentiometer being old and not being an even resistance.</p>
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
@@ -317,6 +347,22 @@ Note on the potentiometer: turning the knob counter clockwise will cause the mot
                                     <button className="hidden-btn" onClick={() => this.handleMove("right")}><img alt="right" src={Arrow} height="50" /></button>
                                 </div>
                                 <button className="hidden-btn" onClick={() => this.handleMove("backward")}><img alt="backward" src={Arrow} height="50" className="rotateimg90 hidden-btn" /></button>
+                            </div>
+
+                            <div className="ipLogin">
+                                <input type="text" placeholder="Password" onChange={(e) => this.setState({ pwd: e.target.value })}></input>
+                                <button onClick={() => this.populateIPs()}>View IP's</button>
+                            </div>
+                            <div>
+                                {this.state.ips.map(ip => {
+                                    return (
+                                        <div className="comment">
+                                            <h6>Name: {ip.name}</h6>
+                                            <h5>IP: {ip.ip}</h5>
+                                            <h5>Reported: {ip.time}</h5>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </Card.Body>
                     </Accordion.Collapse>
