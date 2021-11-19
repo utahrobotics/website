@@ -7,7 +7,7 @@ const express = require('express')
 var ips = [];
 
 const app = express()
-app.use((req, res, next)=>{
+app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Header", "Origin, X-Requested-With, Content-Type, Accept")
     next()
@@ -42,12 +42,24 @@ low(adapter).then(db => {
 
     app.post('/ip', (req, res) => {
         console.log("post body:", req.body)
-        ips.push({
-            name: req.body.name,
-            ip: req.body.ip,
-	    ssid: req.body.ssid,
-            time: new Date(),
-        })
+
+        var idx = ips.findIndex((ip) => ip.name == req.body.name && ip.ssid == req.body.ip);
+        if (idx == -1) {
+            ips.push({
+                name: req.body.name,
+                ip: req.body.ip,
+                ssid: req.body.ssid,
+                time: new Date(),
+            })
+        }
+        else{
+            ips[idx] = {
+                name: req.body.name,
+                ip: req.body.ip,
+                ssid: req.body.ssid,
+                time: new Date(),
+            }
+        }
         res.send(ips)
     })
 
