@@ -43,7 +43,7 @@ low(adapter).then(db => {
     app.post('/ip', (req, res) => {
         console.log("post body:", req.body)
 
-        var idx = ips.findIndex((ip) => ip.name == req.body.name && ip.ssid == req.body.ip);
+        var idx = ips.findIndex((ip) => ip.name == req.body.name && ip.ssid == req.body.ssid);
         if (idx == -1) {
             ips.push({
                 name: req.body.name,
