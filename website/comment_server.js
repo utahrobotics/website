@@ -45,6 +45,7 @@ low(adapter).then(db => {
         ips.push({
             name: req.body.name,
             ip: req.body.ip,
+	    ssid: req.body.ssid,
             time: new Date(),
         })
         res.send(ips)

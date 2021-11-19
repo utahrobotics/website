@@ -23,7 +23,7 @@
     "start": "PORT=80 react-scripts start",
     "start-windows": "set PORT=80 & START /B react-scripts start & START /B node ./move_server.js & START /B node ./comment_server.js",
     "simple-start": "set PORT=80 && react-scripts start",
-    "start-linux": "PORT=80 react-scripts start & node ./move_server.js & node ./comment_server.js&",
+    "start-linux": "node ./move_server.js & node ./comment_server.js & PORT=80 react-scripts start ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
