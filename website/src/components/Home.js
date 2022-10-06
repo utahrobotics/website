@@ -111,7 +111,7 @@ class Home extends React.Component {
                     <h1>Who we <em>are</em></h1>
                     <h4>
                         We are the University of Utah's own robotics team.
-                        The team began as a couple of students in the minging department
+                        The team began as a couple of students in the mining department
                         wanting to compete in NASA's annual Robotic Mining Competition and
                         has since flourished into the multi-disciplinary club that it is today,
                         combining electrical, mechanical, computer, and mining expertise.
