@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Courses from './components/Courses'
 import Contact from './components/Contact'
 import Resources from './components/Resources'
+import Programming from './components/Programming';
 import {
   CSSTransition,
   TransitionGroup
@@ -29,6 +30,7 @@ function Main() {
                 <Route exact path="/sponsors" component={Sponsors} /><Route exact path="/sponsors" component={Sponsors} />
                 <Route exact path="/resources" component={Resources} />
                 <Route exact path="/contact" component={Contact} />
+                <Route exact path="/programming" component={Programming} />
                 <Route exact path="/courses/:level(k4|58|912)/:vid?" component={Courses} />
               </Switch>
             </CSSTransition>
