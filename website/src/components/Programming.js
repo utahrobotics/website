@@ -32,7 +32,7 @@ class Programming extends React.Component {
                 <a href="https://keras.io/">Keras</a> (lean more towards audio interpretation)<br />
                 <a href="https://colab.research.google.com/">Colaboratory</a>/<a href="https://jupyter.org/">Jupyter</a><br />
                 <br />
-                Want to join? Send an email to our current programming team lead here: <a href="mailto:name@email.com">najman.husaini@utah.edu</a><br />
+                Want to join? Send an email to our current programming team lead here: <a href="mailto:najman.husaini@utah.edu">najman.husaini@utah.edu</a><br />
                 We meet every week on Friday at 4pm in MEK 2445. Feel free to pass by if you want to see what we do before you apply!<br />
             </h3>
             </>

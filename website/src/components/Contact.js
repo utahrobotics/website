@@ -20,7 +20,7 @@ class Contact extends React.Component {
         return (
             //<ContactForm />
             <>
-            <h3 style={{ textAlign: "center" }}>You can contact us with questions, comments, and anything else at <a href="mailto:name@email.com">utahstudentrobotics@gmail.com</a></h3>
+            <h3 style={{ textAlign: "center" }}>You can contact us with questions, comments, and anything else at <a href="mailto:utahstudentrobotics@gmail.com">utahstudentrobotics@gmail.com</a></h3>
             <h3 style={{ textAlign: "center" }}>We are open to onboarding anyone and everyone who has any interest in robotics!</h3>
             </>
         )
